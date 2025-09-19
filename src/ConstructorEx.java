@@ -18,6 +18,7 @@ public class ConstructorEx {
     public static void main(String[] args) {
         MyCon m1 = new MyCon(20, "김길동"); //생성자 호출 -> 객체생성
         MyCon m2 = new MyCon(22, "박길동");
+        System.out.println(m1.age);
     }
 }
 
