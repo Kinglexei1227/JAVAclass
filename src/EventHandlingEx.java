@@ -43,5 +43,6 @@ class MyFrame extends JFrame {
 public class EventHandlingEx {
     public static void main(String[] args) {
         new MyFrame();
+        System.out.println();
     }
 }
