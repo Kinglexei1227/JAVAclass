@@ -28,6 +28,7 @@ class MyFrame extends JFrame {
         MyListner m = new MyListner();
         jb.addActionListener(m);
 
+
         this.add(jb); //판때기에 버튼 추가
         setSize(300,300); //판때기 크기 지정
         setLocation(200,200); //판때기 위치 지정
