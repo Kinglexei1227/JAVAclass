@@ -13,7 +13,7 @@ public class IOEx {
         BufferedOutputStream bos
                 = new BufferedOutputStream(fos);
         String str = "ABC가나다";
-        byte[] r = str.getBytes(); //문자열 -> 바이트배열 변환
+        byte[] r = str.getBytes("utf-8"); //문자열 -> 바이트배열 변환
         bos.write(r);
         bos.flush(); //버퍼에 쌓인거 밀어내기
         //문자열 -> 바이트배열 변환
