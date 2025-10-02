@@ -25,7 +25,7 @@ public class IOEx {
         byte[] temp = new byte[1024];
         fis.read(temp); // 1024 바이트 읽기 -> temp에 저장
         //바이트배열 -> 문자열 변환
-        String msg = new String(temp);
+        String msg = new String(t, "utf-8");
         System.out.print(msg.trim() ); //빈공백 제거 후 출력
         System.out.println("end");
 
