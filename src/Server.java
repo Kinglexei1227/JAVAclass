@@ -20,6 +20,8 @@ public class Server {
         String str = new String(b);
         System.out.println(str.trim());
 
+        server = ss.accept();
+
         }
     }
 }
