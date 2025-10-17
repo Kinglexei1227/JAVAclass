@@ -28,6 +28,5 @@ public class IOEx {
         String msg = new String(temp, "utf-8");
         System.out.print(msg.trim() ); //빈공백 제거 후 출력
         System.out.println("end");
-
     }
 }
