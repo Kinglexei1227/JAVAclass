@@ -12,7 +12,13 @@ public class ExceptionEx {
             System.out.println("산술연산 오류 발생");
         }
 
-        System.out.println( r );
+        int[] k = new int[3];
+        k[0] = 0;
+        k[1] = 10;
+        k[2] = 100;
+        System.out.println(k[2]);
+
+
         System.out.println("end");
 
 
