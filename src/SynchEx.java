@@ -16,6 +16,7 @@ class ATM implements Runnable{
             }
     }
 
+
 }
 public void WithDraw(long howMuch) {
     if (getDepositeMoney() > 0) {
