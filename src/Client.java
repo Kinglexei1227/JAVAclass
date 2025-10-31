@@ -45,6 +45,7 @@ class ClientUI extends JFrame {
 
 }
 
+
 public class Client {
     public static void main(String[] args) throws UnknownHostException, IOException {
         new ClientUI();
