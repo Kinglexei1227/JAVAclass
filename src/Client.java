@@ -31,6 +31,7 @@ class ClientUI extends JFrame {
         }
     }
 
+
     public ClientUI() {
         jf = new JTextField(15);
         this.add(jf); // 판때기에 입력창 추가
