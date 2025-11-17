@@ -1,5 +1,5 @@
 //client 파트 구현 목록
-//1)서버에 접속(Socket 생성)  - 접속 버튼이 클릭되었을때 
+//1)서버에 접속(Socket 생성)  - 접속 버튼이 클릭되었을때
 //2)서버로 메시지 송신
 //3)서버에서 보내는 메시지 수신
 
@@ -14,6 +14,7 @@ import java.net.UnknownHostException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -26,6 +27,7 @@ class ClientUI extends JFrame {
     JButton con; // 서버 접속을 위한 버튼
     JTextField jtf; // 채팅 메시지 입력창
     JTextArea jta; // 지난 채팅 메시지를 볼 수 있는 대화창
+    String nick; //닉네임 저장을 위한 변수
 
     Socket client; // 서버와의 통신을 위한 종이컵
     OutputStream os;  //서버에 데이터를 전송하기 위한 실
@@ -39,9 +41,9 @@ class ClientUI extends JFrame {
                 try {
                     // 종이컵에서 읽기위한 실 뽑아내기
                     byte[] b = new byte[1024];
-                    is.read(b); // 1024byte 읽어서 배열 b에 저장
+                    int len = is.read(b); // 1024byte 읽어서 배열 b에 저장함
                     // 수신된 메시지 화면에 보여주기
-                    String str = new String(b); // 바이트값 -> 문자열 변환
+                    String str = new String(b,0,len); // 바이트값 -> 문자열 변환
                     jta.append(str.trim() + '\n'); // 빈공백 제거 후 화면에 보여주기
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -80,8 +82,10 @@ class ClientUI extends JFrame {
                 //2)서버로 메시지 송신
                 //종이컵에서 쓰기위한 실뽑아내기
                 String msg = jtf.getText(); //입력창에서 문자열 가져오기
+                msg = "[ "+nick+" ]" +" : " + msg ;
                 try {
-                    os.write( msg.getBytes() );
+                    os.write(msg.getBytes() );
+                    jtf.setText(""); //보낸 채팅 비우기
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -94,7 +98,7 @@ class ClientUI extends JFrame {
         con = new JButton("접속");
         jtf = new JTextField(20);
         jta = new JTextArea(30, 30);
-
+        nick = JOptionPane.showInputDialog("set your nickname");
 
         //버튼 비활성화 코드
 //      con.setEnabled(false);

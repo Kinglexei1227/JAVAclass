@@ -42,13 +42,13 @@ class ServerThread extends Thread {
                 for (int i = 0; i < Server.totalSocket.size(); i++) {
                     Socket temp = (Socket) Server.totalSocket.get(i);
                     OutputStream os = temp.getOutputStream();
-                    os.write(b);
+                    os.write(b,0,len); // 배열 b 0부터 길이만큼만 출력
                 }
 
             }
         } catch (IOException e) {
             System.out.println("Client error occured during communication" + e.getMessage());
-        } finally {
+        } finally { //무조건 실행하는 코드 ( 오류 방지를 위해 설정
             try {
                 Server.totalSocket.remove(server);
                 server.close();
