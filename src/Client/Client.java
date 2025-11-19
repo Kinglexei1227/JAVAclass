@@ -131,6 +131,7 @@ class ClientUI extends JFrame {
 public class Client {
     public static void main(String[] args) throws UnknownHostException, IOException {
         new ClientUI();
+
         // 1) 서버에 접속(Socket 생성)
 //      Socket client = new Socket("127.0.0.1", 8888);
         // 2)서버로 메시지 송신
