@@ -4,7 +4,7 @@ class student {
     public void studentBorrowBooks() {
     }
 }
-class library {
+class librarys {
     book[] books;
 }
 class book {
